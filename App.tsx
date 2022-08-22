@@ -1,20 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { NativeBaseProvider } from "native-base";
+import Navigation from './src/navigation/Navigation';
 
-export default function App() {
+/**
+ * @function  App
+ * @description This is the initial point of the application, 
+ * but the initial configurations of the project are also usually set, such as if a 
+ * library is going to be used for managing the global state, 
+ * such as redux or the react API, which is context.
+ * @links https://redux-toolkit.js.org/ or https://es.reactjs.org/docs/context.html
+ */
+
+export default function App(): JSX.Element {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeBaseProvider>
+      <Navigation/>
+    </NativeBaseProvider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
